@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:DiceRoll"
+             x:Class="DiceRoll.AboutPage">
+    <ContentPage.BindingContext>
+        <local:DiceViewModel />
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand">
+            <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                   Aspect="AspectFill"
+                   Source="tentacles.png" />
+            
+            <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1" Padding="0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                
+                <ScrollView Grid.Row="0" Padding="10">
+                    <Label Text="{Binding AboutText}" 
+                           FontSize="Body"
+                           TextColor="#7A54CF"
+                           />
+
+                </ScrollView>
+                
+                
+                <ImageButton Grid.Row="1"
+                             Source="brand_cthulhu_icon_158944_by_DiemenDesign.ico"
+                             BackgroundColor="Transparent"
+                             Command="{Binding GoBackCommand}"
+                             VerticalOptions="End"
+                             HorizontalOptions="Center"
+                             HeightRequest="75"
+                             WidthRequest="75"
+                             />
+            </Grid>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

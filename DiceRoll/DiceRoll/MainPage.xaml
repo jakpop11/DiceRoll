@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:DiceRoll"
+             x:Class="DiceRoll.MainPage"
+             BackgroundColor="#122233" 
+             IconImageSource="brand_cthulhu_icon_158944_by_DiemenDesign.ico"
+             x:Name="MainContentPage"
+             >
+    <ContentPage.BindingContext>
+        <local:DiceViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <Style x:Key="AmountButton" TargetType="Button">
+                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="0,0"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="25"/>
+                <Setter Property="WidthRequest" Value="25"/>
+                
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand">
+        <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1" 
+               Aspect="AspectFill"
+               Source="tentacles.png" />
+        <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1" Padding="0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                <FlexLayout x:Name="fLayout" Padding="10,5"
+                            Grid.Row="0"
+                            BindableLayout.ItemsSource="{Binding Dices}"
+                            Wrap="Wrap" Direction="Column"
+                            JustifyContent="Start">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout WidthRequest="130" Margin="5,0">
+                                <ImageButton Source="{Binding imgSrc}" 
+                                             Command="{Binding Source={x:Reference fLayout}, Path=BindingContext.RollCommand}"
+                                             CommandParameter="{Binding .}"
+                                             WidthRequest="130"
+                                             HeightRequest="130"
+                                             Background="Transparent"
+                                             BackgroundColor="Transparent"
+                                             BorderColor="Transparent"
+                                             
+                                             />
+                                
+                                <FlexLayout JustifyContent="SpaceEvenly" AlignItems="Center" HeightRequest="50" Padding="10,0">
+                                    <Button Text="-" 
+                                            Command="{Binding Source={x:Reference fLayout}, Path=BindingContext.SubtractQuantityCommand}"
+                                            CommandParameter="{Binding .}"
+                                            Style="{StaticResource AmountButton}"
+                                            />
+                                    
+                                    <Entry Text="{Binding Quantity}" Placeholder="0"
+                                           TextColor="#7A54CF" PlaceholderColor="#556BDE" WidthRequest="30"
+                                           Keyboard="Numeric" 
+                                           VerticalOptions="EndAndExpand" FontSize="Subtitle" 
+                                           />
+
+                                    <Button Text="+" 
+                                            Command="{Binding Source={x:Reference fLayout}, Path=BindingContext.AddQuantityCommand}"
+                                            CommandParameter="{Binding .}"
+                                            Style="{StaticResource AmountButton}"
+                                            />
+                                </FlexLayout>
+
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </ScrollView>
+
+            
+            
+            
+            
+            <Grid Grid.Row="1" VerticalOptions="StartAndExpand" HeightRequest="170">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+
+                <Button Grid.Column="1" Grid.Row="0"
+                        Command="{Binding ResetQuantityCommand}"
+                        Text="Reset" 
+                        VerticalOptions="Start"
+                        HorizontalOptions="Center"
+                        HeightRequest="45"
+                        WidthRequest="100"
+
+                    />
+
+                <Label Grid.Column="1" Grid.Row="1"
+                   Text="{Binding DisplayScore}"
+                   FontSize="Title"
+                   VerticalOptions="End"
+                   HorizontalOptions="Start"
+                   TextColor="#7A54CF"
+                   
+                   />
+
+                <Label Grid.Column="1" Grid.Row="2"
+                   Text="{Binding DisplayThrow}"
+                   FontSize="Subtitle"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start"
+                   TextColor="#556BDE"
+                   
+                   />
+
+                <ImageButton Grid.Column="0" Grid.RowSpan="3" Margin="10,0,0,10"
+                             Source="brand_cthulhu_icon_158944_by_DiemenDesign.ico"
+                             BackgroundColor="Transparent"
+                             Command="{Binding GoToAboutCommand}"
+                             VerticalOptions="End"
+                             HorizontalOptions="Start"
+                             HeightRequest="75"
+                             WidthRequest="75"
+                             />
+
+                <ImageButton Grid.Column="2" Grid.RowSpan="3" Margin="10,0,0,10"
+                             Source="brand_cthulhu_icon_158944_by_DiemenDesign.ico"
+                             BackgroundColor="Transparent"
+                             Command="{Binding GoToHistoryCommand}"
+                             VerticalOptions="End"
+                             HorizontalOptions="Start"
+                             HeightRequest="75"
+                             WidthRequest="75"
+                             />
+
+
+
+
+
+            </Grid>
+        </Grid>
+    </AbsoluteLayout>
+</ContentPage>

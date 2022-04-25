@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRoll.Android", "DiceRoll\DiceRoll.Android\DiceRoll.Android.csproj", "{5AEDFE66-90C9-4837-88B2-3A715AE3A8F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRoll", "DiceRoll\DiceRoll\DiceRoll.csproj", "{549D0BF7-ACFE-4CFE-B540-A39FA8F9FBC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AEDFE66-90C9-4837-88B2-3A715AE3A8F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AEDFE66-90C9-4837-88B2-3A715AE3A8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AEDFE66-90C9-4837-88B2-3A715AE3A8F3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5AEDFE66-90C9-4837-88B2-3A715AE3A8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AEDFE66-90C9-4837-88B2-3A715AE3A8F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AEDFE66-90C9-4837-88B2-3A715AE3A8F3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{549D0BF7-ACFE-4CFE-B540-A39FA8F9FBC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{549D0BF7-ACFE-4CFE-B540-A39FA8F9FBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{549D0BF7-ACFE-4CFE-B540-A39FA8F9FBC1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{549D0BF7-ACFE-4CFE-B540-A39FA8F9FBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{549D0BF7-ACFE-4CFE-B540-A39FA8F9FBC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{549D0BF7-ACFE-4CFE-B540-A39FA8F9FBC1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {626BBAC6-C701-4C9E-8842-175293166BCA}
+	EndGlobalSection
+EndGlobal
