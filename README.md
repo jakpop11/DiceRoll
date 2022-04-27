@@ -3,7 +3,7 @@
 
 # Screenshots
 
-<img scr="Screenshots/DiceRoll_LightTheme.jpg" width="100" >
+<img scr="Screenshots/DiceRoll_LightTheme.jpg" >
 <img scr="Screenshots/DiceRoll_DarkTheme.jpg" width="100" >
 <img scr="Screenshots/DiceRoll_HistoryPage.jpg" width="100" >
 
