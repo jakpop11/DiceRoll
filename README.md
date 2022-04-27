@@ -3,8 +3,9 @@
 
 # Screenshots
 
-![image](https://user-images.githubusercontent.com/104214436/165535756-02eb019e-ce32-4580-9d78-7213a3862002.png)
-
+<img scr="Screenshots/DiceRoll_LightTheme.jpg" width="100" >
+<img scr="Screenshots/DiceRoll_DarkTheme.jpg" width="100" >
+<img scr="Screenshots/DiceRoll_HistoryPage.jpg" width="100" >
 
 # Art, sounds info:
 
