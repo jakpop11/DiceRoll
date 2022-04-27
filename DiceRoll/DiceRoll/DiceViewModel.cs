@@ -261,7 +261,7 @@ __
             Dices.Add(new Dice(100, "d100_by_skoll.ico"));
             Dices.Add(new Dice(200, "d2_0.ico", 100));
 
-            // Load Soud to play
+            // Load Sound to play
             audioPlayer.Load("mixkit_light_button_2580.wav");
 
 

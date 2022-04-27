@@ -9,7 +9,11 @@
 
 
     <ContentPage.Content>
+        
+        <!-- Display Content -->
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand">
+            
+            <!-- Background -->
             <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1" 
                    Aspect="AspectFill"
                    Source="tentacles.png" />
@@ -21,6 +25,7 @@
                 </Grid.RowDefinitions>
 
 
+                <!-- History -->
                 <ScrollView Grid.Row="0" Padding="10" FlowDirection="RightToLeft">
                     <Label Text="{Binding DisplayThrowHistory}" 
                            FontSize="Body"
@@ -30,6 +35,7 @@
                 </ScrollView>
 
 
+                <!-- Return Button -->
                 <ImageButton Grid.Row="1"
                              Source="brand_cthulhu_icon_158944_by_DiemenDesign.ico"
                              BackgroundColor="Transparent"
