@@ -20,7 +20,7 @@ namespace DiceRoll
         int quantity = 0;
 
 
-        // Managers 
+        // Menegers 
         public string Quantity
         {
             get => (quantity == 0) ? string.Empty : quantity.ToString();

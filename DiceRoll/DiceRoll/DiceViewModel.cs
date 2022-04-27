@@ -106,7 +106,7 @@ __
         Plugin.SimpleAudioPlayer.ISimpleAudioPlayer audioPlayer = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
 
 
-        // Managers
+        // Menegers
         public string Score
         {
             get => score;
