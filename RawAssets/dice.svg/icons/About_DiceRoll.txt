@@ -59,3 +59,17 @@ Please, include a mention 'Icons made by {author}' in your derivative work.
 If you use them in one of your project, don't hesitate to drop a message to delapouite@gmail.com or ping @GameIcons on twitter.
 
 More info and icons available at https://game-icons.net
+
+
+
+	__Sounds license__
+
+Sounds available on side: https://mixkit.co/
+License: Mixkit Sound Effects Free License
+Sounds:
+	mixkit_light_button_2580.wav
+	mixkit_long_pop_2358.wav
+
+__
+
+
