@@ -106,6 +106,9 @@ __
         Plugin.SimpleAudioPlayer.ISimpleAudioPlayer audioPlayer = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
 
 
+        public Color DefaultColour = Color.FromHex("7A54CF");
+
+
         // Menegers
         public string Score
         {
@@ -254,12 +257,12 @@ __
             Dices.Add(new Dice(4, "d4_by_skoll.ico"));
             Dices.Add(new Dice(6, "d6_edit_by_delapuite.ico"));
             Dices.Add(new Dice(8, "d8_by_delapuite.ico"));
-            Dices.Add(new Dice(10, "d100_by_skoll.ico", 0, 10));
+            //Dices.Add(new Dice(10, "d100_by_skoll.ico", 0, 10));
             Dices.Add(new Dice(10, "d10_by_skoll.ico", 0));
             Dices.Add(new Dice(12, "d12_by_skoll.ico"));
             Dices.Add(new Dice(20, "d20_by_delapuite.ico"));
             Dices.Add(new Dice(100, "d100_by_skoll.ico"));
-            Dices.Add(new Dice(200, "d2_0.ico", 100));
+            //Dices.Add(new Dice(200, "d2_0.ico", 100));
 
             // Load Sound to play
             audioPlayer.Load("mixkit_light_button_2580.wav");
