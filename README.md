@@ -1,7 +1,7 @@
 # DiceRoll
 
 ## APK
-  App is ready to download from this weebsite! 
+  App is ready to download! 
   
   <a href="https://github.com/jakpop11/DiceRoll/releases" target="_blank">
     <b>Download from GitHub</b>
