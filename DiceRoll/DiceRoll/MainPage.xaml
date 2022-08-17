@@ -127,7 +127,7 @@
                    FontSize="Title"
                    VerticalOptions="End"
                    HorizontalOptions="Start"
-                   TextColor="#7A54CF"
+                   TextColor="#C080FF"
                    
                    />
 
@@ -136,7 +136,7 @@
                    FontSize="Subtitle"
                    VerticalOptions="Start"
                    HorizontalOptions="Start"
-                   TextColor="#556BDE"
+                   TextColor="#8080F0"
                    
                    />
 
