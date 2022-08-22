@@ -146,24 +146,15 @@ __
             // Generate random no. (dice.quantity)-times, sum them and pass to Score
 
             Dice rollD = obj as Dice;
-            Random random = new Random();
+            List<int> rollList = rollD.Roll();
 
+            Throw = $"{rollD.GetIntQuantity()}D{rollD.sides}({String.Join(", ", rollList)})";
 
             int s = 0;
-            //Throw = $"{rollD.Quantity}D{rollD.sides}: (";
-            //for (int i = 0; i < ((rollD.GetIntQuantity() == 0)? 1: rollD.GetIntQuantity()); i++)
-            //{
-            //    int roll = (random.Next(0, rollD.sides) + rollD.minCount) * rollD.multiplier;
-            //    s += roll;
-            //    Console.WriteLine($"Throw{i}: {roll}");
-            //    Throw += roll.ToString() + ", ";
-            //}
-            //Throw = Throw.Remove(Throw.Length - 2); // Remove last comma
-            //Throw += ")";
-
-            Throw = $"Throw2: {rollD.Roll()}";
-
-
+            foreach (int r in rollList)
+            {
+                s += r;
+            }
 
 
 
@@ -194,6 +185,50 @@ __
 
             // Display PopUp
             DisplayScoreAlert();
+        }
+
+
+        public ICommand RollAllCommand => new Command(RollAllDices);
+        void RollAllDices()
+        {
+            List<string> throwList = new List<string>();
+            int s = 0;
+
+            foreach(Dice dice in Dices)
+            {
+                if (dice.GetIntQuantity() == 0) { continue; }
+
+                List<int> rollList = dice.Roll();
+                string diceThrow = $"{dice.GetIntQuantity()}D{dice.sides}({String.Join(", ", rollList)})";
+
+                throwList.Add(diceThrow);
+
+                foreach(int r in rollList)
+                {
+                    s += r;
+                }
+
+            }
+
+            Throw = String.Join(";\n", throwList);
+
+            // if there is the same score as previous one it will display combo (x2), then reset count
+            Score = (Score == s.ToString()) ? s.ToString() + " (x2)" : s.ToString();
+
+
+            // Update ThrowHistory 
+            //
+            //
+            //
+
+
+            // Play sound
+            audioPlayer.Play();
+
+
+            // Display PopUp
+            DisplayScoreAlert();
+
         }
 
 

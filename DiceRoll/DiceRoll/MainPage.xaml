@@ -111,8 +111,19 @@
                 </Grid.RowDefinitions>
 
 
-                <!-- Reset Button -->
+                <!-- RollAll Button -->
                 <Button Grid.Column="1" Grid.Row="0"
+                        Command="{Binding RollAllCommand}"
+                        Text="Roll" 
+                        VerticalOptions="Start"
+                        HorizontalOptions="Center"
+                        HeightRequest="45"
+                        WidthRequest="100"
+
+                    />
+
+                <!-- Reset Button -->
+                <Button Grid.Column="1" Grid.Row="1"
                         Command="{Binding ResetQuantityCommand}"
                         Text="Reset" 
                         VerticalOptions="Start"
@@ -123,7 +134,7 @@
                     />
 
                 <!-- Score -->
-                <Label Grid.Column="1" Grid.Row="1"
+                <Label Grid.Column="1" Grid.Row="2"
                    Text="{Binding DisplayScore}"
                    FontSize="Title"
                    VerticalOptions="End"
@@ -132,7 +143,7 @@
                    
                    />
 
-                <Label Grid.Column="1" Grid.Row="2"
+                <Label Grid.Column="1" Grid.Row="3"
                    Text="{Binding DisplayThrow}"
                    FontSize="Subtitle"
                    VerticalOptions="Start"
