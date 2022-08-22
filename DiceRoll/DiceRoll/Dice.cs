@@ -101,6 +101,19 @@ namespace DiceRoll
             return quantity;
         }
 
+        public List<int> Roll()
+        {
+            List<int> rollList = new List<int>();
 
+            Random random = new Random();
+            for (int i = 0; i < ((GetIntQuantity() == 0) ? 1 : GetIntQuantity()); i++)
+            {
+                int roll = (random.Next(0, sides) + minCount) * multiplier;
+                rollList.Add(roll);
+            }
+
+
+            return rollList;
+        }
     }
 }

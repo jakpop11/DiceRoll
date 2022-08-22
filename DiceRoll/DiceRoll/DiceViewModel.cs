@@ -150,15 +150,21 @@ __
 
 
             int s = 0;
-            Throw = $"{rollD.Quantity}D{rollD.sides}: (";
-            for (int i = 0; i < ((rollD.GetIntQuantity() == 0)? 1: rollD.GetIntQuantity()); i++)
-            {
-                int roll = (random.Next(0, rollD.sides) + rollD.minCount) * rollD.multiplier;
-                s += roll;
-                Console.WriteLine($"Throw{i}: {roll}");
-                Throw += roll.ToString() + ", ";
-            }
-            Throw += ")";
+            //Throw = $"{rollD.Quantity}D{rollD.sides}: (";
+            //for (int i = 0; i < ((rollD.GetIntQuantity() == 0)? 1: rollD.GetIntQuantity()); i++)
+            //{
+            //    int roll = (random.Next(0, rollD.sides) + rollD.minCount) * rollD.multiplier;
+            //    s += roll;
+            //    Console.WriteLine($"Throw{i}: {roll}");
+            //    Throw += roll.ToString() + ", ";
+            //}
+            //Throw = Throw.Remove(Throw.Length - 2); // Remove last comma
+            //Throw += ")";
+
+            Throw = $"Throw2: {rollD.Roll()}";
+
+
+
 
 
             // if there is the same score as previous one it will display combo (x2), then reset count
