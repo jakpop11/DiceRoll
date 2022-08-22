@@ -106,7 +106,7 @@ __
         Plugin.SimpleAudioPlayer.ISimpleAudioPlayer audioPlayer = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
 
 
-        public Color DefaultColour = Color.FromHex("7A54CF");
+        //public Color DefaultColour = Color.FromHex("7A54CF");
 
 
         // Menegers
@@ -185,6 +185,9 @@ __
             // Play sound
             audioPlayer.Play();
 
+
+            // Display PopUp
+            DisplayScoreAlert();
         }
 
 
@@ -248,6 +251,13 @@ __
         }
 
 
+        public ICommand DisplayAlertCommand => new Command(DisplayScoreAlert);
+        async void DisplayScoreAlert()
+        {
+            await Application.Current.MainPage.DisplayAlert(DisplayScore, DisplayThrow, "OK");
+        }
+
+
         // Constructors
         public DiceViewModel()
         {
@@ -280,8 +290,3 @@ __
     }
 }
 
-/*
- * Add to GitHub 25.04.2022
- * Update master branch
- * 
- */

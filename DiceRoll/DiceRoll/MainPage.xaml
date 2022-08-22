@@ -44,9 +44,10 @@
 
 
             <!-- Dices -->
-            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" 
+                        Grid.Row="0"
+                        VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
                 <FlexLayout x:Name="fLayout" Padding="10,5"
-                            Grid.Row="0"
                             BindableLayout.ItemsSource="{Binding Dices}"
                             Wrap="Wrap" Direction="Column"
                             JustifyContent="Start">
