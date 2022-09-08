@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
+using DiceRoll.Models;
 
 
 
@@ -127,7 +128,7 @@ __
         }
 
         public string DisplayScore => $"Score: {Score}";
-        public string DisplayThrow => $"Throw: {Throw}";
+        public string DisplayThrow => $"Throw: \n{Throw}";
 
         public string DisplayThrowHistory => ThrowHistory;
 
@@ -146,15 +147,12 @@ __
             // Generate random no. (dice.quantity)-times, sum them and pass to Score
 
             Dice rollD = obj as Dice;
-            List<int> rollList = rollD.Roll();
+            ThrowClass currentThrow = rollD.Roll();
 
-            Throw = $"{rollD.GetIntQuantity()}D{rollD.sides}({String.Join(", ", rollList)})";
 
-            int s = 0;
-            foreach (int r in rollList)
-            {
-                s += r;
-            }
+            Throw = currentThrow.ToString();
+
+            int s = currentThrow.GetScore();
 
 
 
@@ -191,26 +189,22 @@ __
         public ICommand RollAllCommand => new Command(RollAllDices);
         void RollAllDices()
         {
-            List<string> throwList = new List<string>();
+            List<ThrowClass> throwList = new List<ThrowClass>();
             int s = 0;
 
             foreach(Dice dice in Dices)
             {
                 if (dice.GetIntQuantity() == 0) { continue; }
 
-                List<int> rollList = dice.Roll();
-                string diceThrow = $"{dice.GetIntQuantity()}D{dice.sides}({String.Join(", ", rollList)})";
+                ThrowClass currentThrow = dice.Roll();
 
-                throwList.Add(diceThrow);
+                throwList.Add(currentThrow);
 
-                foreach(int r in rollList)
-                {
-                    s += r;
-                }
+                s += currentThrow.GetScore();
 
             }
 
-            Throw = String.Join(";\n", throwList);
+            Throw = ThrowClass.StringJoin(";\n", throwList);
 
             // if there is the same score as previous one it will display combo (x2), then reset count
             Score = (Score == s.ToString()) ? s.ToString() + " (x2)" : s.ToString();
