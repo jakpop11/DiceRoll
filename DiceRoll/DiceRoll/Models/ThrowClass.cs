@@ -44,11 +44,15 @@ namespace DiceRoll.Models
         public static string StringJoin(string sep, List<ThrowClass> throws)
         {
             string result = string.Empty;
-            for(int i=0; i< throws.Count-1; i++)
+            for (int i = 0; i < throws.Count; i++)
             {
+                if (i == throws.Count - 1)
+                {
+                    result += throws[throws.Count - 1].ToString();
+                    break;
+                }
                 result += throws[i].ToString() + sep;
             }
-            result += throws[throws.Count-1].ToString();
 
             return result;
         }
