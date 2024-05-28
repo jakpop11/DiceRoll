@@ -47,7 +47,7 @@ Xamarin, C#, .NET, VisualStudio
 
 ### Requirements:
 <ul>
-  <li>req: Android 11 - R (SDK 30)</li>
+  <li>recommended: Android 11 - R (SDK 30)</li>
   <li>min: Android 5 - Lollipop (SDK 21)</li>
 </ul>
 
